@@ -1,24 +1,6 @@
 rfc 2616 直译
 =============
 
-日志状态
---------
-
-本文档为互联网协会定义了网络互联跟踪协议标准，并诚邀各界给予探讨和建议，以促进协议进一步完善。
-如果希望了解标准化进程和协议状态，请查看最新的互联网官方协议标准（STD 1）。
-
-摘要
-----
-
-超文本转换协议（HTTP）是应用层协议，在分布式合作性超媒体信息平台中得以应用。
-它是一种广泛的无状态协议，通过协议的请求方法，错误码和头等内容在很多任务中使用，不单是超文本任务。
-例如，可以用在域名服务器和分布式管理系统中。
-HTTP 协议的特征之一是数据显示的归类和协商；该特性允许系统创建时不依赖于数据转换。
-
-自 1990 起，HTTP 协议就开始用在万维网的全球信息初始化过程中。
-该说明书定义的协议名为 ``HTTP/1.1``，是对标准协议 RFC 2068 的更新。
-
-
 3.4 字符集
 ----------
 
@@ -147,8 +129,10 @@ HTTP/1.1 在 ``Accept-Encoding`` 头和 ``Content-Encoding`` 字段中使用 ``c
 
 一个更复杂的例子：
 
-``Accept: text/plain; q=0.5, text/html,
-          text/x-dvi; q=0.8, text/x-c``
+.. code-block:: text
+ 
+ Accept: text/plain; q=0.5, text/html,
+          text/x-dvi; q=0.8, text/x-c
 
 口头上解析为“客户端更希望得到 ``text/html`` 和 ``text/x-c`` 媒体类型，没有的话，可以发送 ``text/x-dvi`` 实体；
 仍旧没有的话，可以发送 ``text/plain`` 实体”。
@@ -172,8 +156,10 @@ HTTP/1.1 在 ``Accept-Encoding`` 头和 ``Content-Encoding`` 字段中使用 ``c
 给定一个类型，通过查找与该类型匹配且优先级最高的媒体范围，可以决定类型的质量因子。
 例如：
 
-``Accept: text/*;q=0.3, text/html;q=0.7,text/html;level=1,
-          text/html;level=2;q=0.4,*/*;q=0.5``
+.. code-block:: text
+
+ Accept: text/*;q=0.3, text/html;q=0.7,text/html;level=1,
+          text/html;level=2;q=0.4,*/*;q=0.5
 
 会得到如下关联的质量因子：
 
@@ -219,7 +205,7 @@ HTTP/1.1 在 ``Accept-Encoding`` 头和 ``Content-Encoding`` 字段中使用 ``c
 14.3 Accept-Encoding
 --------------------
 
-``Accept-Encoding`` 请求头和 ``Accept`` 头相似，但是限制 ``content-codings``（3.5节）为响应接受的编码。
+``Accept-Encoding`` 请求头和 ``Accept`` 头相似，但是限制 ``content-codings`` （3.5节）为响应接受的编码。
 
 .. code-block:: text
 
